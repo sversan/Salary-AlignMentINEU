@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Salary in EU</title>
+    <style>
+        table {
+            width: 50%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Average Salary per Capita in the EU</h1>
+    <table border="1" style="margin:auto;">
+        <tr>
+            <th>Country</th>
+            <th>Average Salary (€)</th>
+        </tr>
+        {% for country, salary, color in zip(countries, salaries, colors) %}
+        <tr style="background-color: {{ color }};">
+            <td>{{ country }}</td>
+            <td>{{ salary }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
